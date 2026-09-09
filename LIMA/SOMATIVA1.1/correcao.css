@@ -1,0 +1,121 @@
+/* Configurações gerais */
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #dfbe53;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color:#dfbe53;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+header h1 {
+    font-weight: 300;
+    font-size: 42px;
+    margin: 10px;
+}
+
+header p {
+    font-size: 18px;
+}
+
+/* Painel de Navegação */
+nav {
+    margin-top: 25px;
+}
+
+nav a {
+    color: whitesmoke;
+    text-decoration: none;
+    margin: 10px;
+    font-weight: bold;
+}
+
+section {
+    background-color: white;
+    margin-bottom: 30px;
+    padding: 30px;
+}
+
+section h2 {
+    color: #dfbe53;
+    font-size: 30px;
+    text-align: center;
+}
+
+section h3 {
+    color: #dfbe53;
+
+}
+
+section p {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.imagem-principal {
+    width: 500px;
+    max-width: 100%;
+    display: block;
+    margin: 20px auto;
+}
+
+/* todos poderiam se reduzidos a apenas uma classe */
+.web {
+    background-color: #c0960b;
+    border: 1px solid #cccccc;
+    margin: 20px;
+    padding: 20px;
+}  
+
+.sistemas {
+    background-color: #c0960b;
+    border: 1px solid #cccccc;
+    margin: 20px;
+    padding: 20px;
+}
+
+.bd {
+    background-color: #c0960b;
+    border: 1px solid #cccccc;
+    margin: 20px;
+    padding: 20px;
+}
+
+.consultoria {
+    background-color: #c0960b;
+    border: 1px solid #cccccc;
+    margin: 20px;
+    padding: 20px;
+}
+
+.equipe imag{
+    width: 150px;
+    height: 150px;
+}
+
+.vendas {
+    background-color: #c0960b;
+    border: 1px solid #cccccc;
+    margin: 20px;
+    padding: 20px;
+}
+
+.aplicativos {
+    background-color: #c0960b;
+    border: 1px solid #cccccc;
+    margin: 20px;
+    padding: 20px;
+}
+.Institucional {
+    background-color: #c0960b;
+    border: 1px solid #cccccc;
+    margin: 20px;
+    padding: 20px;
+}
