@@ -13,3 +13,16 @@
 const entrada = require('readline-sync');
 
 console.log("=== Bem-vindo ao programa de classificacao de temperatura da giii (; ===");
+
+const temperatura = entrada.questionFloat("Qual a temperatura da maquina? ");
+
+if (temperatura <= 60) {
+    return console.log(`Temperatura: ${temperatura} °C \nSituação: NORMAL`)
+}
+else if (temperatura >= 61 && temperatura <= 80) {
+    return console.log(`Temperatura: ${temperatura} °C \nSituação: ATENÇÃO`)
+}
+else if (temperatura > 80) {
+    return console.log(`Temperatura: ${temperatura} °C \nSituação: CRÍTICA`)
+}
+
