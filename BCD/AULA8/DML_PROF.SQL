@@ -1,3 +1,4 @@
+-- Active: 1788351676668@@127.0.0.1@3306@smartcoffee_dml_gi
 
 -- ============================================================
 -- SMARTCOFFEE - BASE DE DADOS PARA AULA 08 - DML
