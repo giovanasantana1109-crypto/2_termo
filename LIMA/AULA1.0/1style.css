@@ -1,26 +1,51 @@
+/* /* CSS DOS EXERCICIOS */
 .equipe{
     display: flex;
     flex-direction: row;
+     /* EXERCICIO 2  */
     gap: 30px;
+
+    /* EXERCICIO 3*/
+
+    /* DEIXA NO CENTRO */
      justify-content: center;  
+
+     /* VAI PARA A DIREITA */
     /* justify-content: flex-end;  */
+
+    /* VAI PARA A ESQUERDA */
     /* justify-content: flex-start;  */
-     justify-content: space-around; 
+
+    /* FICA MAIS ESPAÇADO */
+     /* justify-content: space-around;  */
+
+     /* FICA AINDA MAIS ESPAÇADO */
     /* justify-content: space-between; */
+
     /* justify-content: space-evenly;  */
+
+    
 
 }
 
+
+/* EXERCICIO 4 */
 .gio{
     display: flex;
     flex-direction: column;  
+
+/* FICA NA ESQUERDA A COLUNA */
     align-items: flex-start;
-     align-items: center; 
-    /* align-items: flex-end;   */
+    /* FICA NO CENTRO A COLUNA */
+    align-items: center; 
+    /* FICA NA DIREITA A COLUNA */
+    align-items: flex-end;  
 }
 
 .cards  {
     display: flex;
     gap: 20px;
     flex-direction: row;
+    /* EX 5 */
+    /* A TAG flex-direction: row; COLOCOU UM PRODUTO DO LADO DO OUTRO E O ERRO ENCONTRADA NO EXERCICIO É NO MOMENTO EM QUE O CARDS FOI CHAMADO, ELE ESTA NO INDEX COMO CARDS E NO CSS ESTACA COMO CARDS ARTICLE*/
 }
