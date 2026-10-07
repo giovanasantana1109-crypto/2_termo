@@ -1,0 +1,180 @@
+-- Active: 1788351676668@@127.0.0.1@3306@smartcoffee_dml_gi
+
+INSERT INTO cliente (nome,email,telefone,cidade,ativo) VALUES
+('Wladir Edson','wladmir@email.com','123456789','Paris',TRUE);
+
+-- EXEMPLO DE ESTRUTURA SIMPLES DE SELECT
+-- SELECT * FROM cliente
+-- FROM tabela;
+
+-- EX1: SELECT PARA CONSULTAR TODAS AS COLUNAS
+SELECT * FROM cliente;
+
+-- EX2: CONSULTANDO POR COLUNAS
+SELECT nome, email FROM cliente;
+
+-- EX3: INSERINDO APELIDO NAS COLUNAS -- ALTAS
+SELECT nome AS Cliente
+FROM cliente; 
+
+SELECT nome AS Cliente, telefone AS Contato, ativo AS STATUS
+FROM cliente;
+
+-- ESSE CRIA UMA COLUNA NOVA
+SELECT nome, preco, preco * 0.90 AS Preco_Promocional
+FROM produto;
+
+-- EX4: DISTINCT - ELIMINAR REPETIÇÕES
+SELECT cidade FROM cliente;
+
+SELECT DISTINCT cidade AS Cidades_Sem_Repetir
+FROM cliente;
+-- SEM DISTINCT O ITEM IRA APARECER VARIAVEIS VEZES
+-- COM DISTINCT O ITEM IRA APARECER APENAS UMA VEZ
+
+-- EX5: FILTROS EM REGISTROS
+SELECT nome, preco
+FROM produto
+-- RETORNA VALORES ACIMA DE 10 REAIS NOS PREÇOS
+WHERE preco > 10;
+
+
+-- nao entendi o que ele fez aqui
+SELECT nome, preco 
+FROM produto
+-- RETORNA PRODUTOS ATIVOS
+WHERE ativo = TRUE;
+
+SELECT id_pedido, data_pedido, valor_total
+FROM pedido
+WHERE valor_total >= 10.00;
+
+-- RETORNA PEDIDOS ACIMA DE DETERMINADO VALOR
+
+-- OPERADORES DE COMPARAÇÃO 
+-- = IGUAL
+-- <> OU != DIFERENTE
+-- > MAIOR QUE
+-- < MENOR QUE
+-- <= MENOR OU IGUAL
+
+-- EX6: USO DE AND, OR E NOT
+-- AND - TODAS AS CONDIÇÕES PRECISAM SER VERDADEIRAS
+SELECT nome, preco  
+FROM produto
+WHERE preco >= 8.00 AND preco <= 20.00;
+
+-- OR - pelo menos uma condição verdadeira
+SELECT nome , cidade
+FROM cliente
+WHERE cidade = 'Limeira' OR cidade = 'Piracicaba';
+
+-- NOT - NEGAR NÃO TRAZER RESULTADOS QUE FOI APRENSENTADO
+SELECT nome, cidade
+FROM cliente
+WHERE NOT cidade = 'Limeira';
+
+-- JUNTOS - AND E OR
+SELECT nome, cidade, ativo AS Status  
+FROM cliente
+WHERE ativo = TRUE
+AND (cidade = 'Limeira' OR cidade = 'Americana');
+
+-- EX7: PESQUISANDO POR INTERVALOS - BETWEEN
+SELECT nome, preco
+FROM produto
+WHERE preco BETWEEN 8.00 AND 15.00;
+
+SELECT id_pedido, data_pedido, valor_total
+FROM pedido
+WHERE data_pedido BETWEEN '2026-09-01 00:00:00' AND '2026-09-30 23:59:59';
+
+-- EX8: IN COM VARIAS POSSIBILIDADES
+SELECT nome , cidade
+FROM cliente
+WHERE cidade NOT IN ('Limeira', 'Campinas');
+
+-- EX9: EXEMPLO COM TEXTOS OU PESQUISAR POR TEXTOS - LIKE
+-- CORINGAS
+-- % VARIOS CARACTERES
+-- _ EXATAMENTE UM CARACTER
+
+SELECT nome 
+FROM produto
+WHERE nome LIKE 'Café%'
+-- RETORNAR PRODUTOS QUE POSSUEM A PALAVRA CAFÉ E QUE COMEÇAM COM ELA
+
+SELECT nome 
+FROM produto
+WHERE nome LIKE '%chocolate';
+-- RETORNAR PRODUTOS QUE POSSUEM A PALAVRA CHOCOLATE
+
+SELECT nome
+FROM produto
+WHERE nome LIKE '%Silva';
+-- RETORNA NOMES QUE TERMINAM COM SILVA
+
+SELECT nome 
+FROM produto
+WHERE nome LIKE '_afé';
+
+-- EX10: NULL - AUSÊNCIA DE VALOR
+SELECT nome, telefone
+FROM cliente
+WHERE telefone IS NULL;
+
+SELECT nome, telefone
+FROM cliente
+WHERE telefone IS NOT NULL;
+
+-- EX11:ORDER BY - ORDENAR RESULTADOS
+-- ASC SIGNIFICA CRESENTE
+-- DESC SIGNIFICA DECRESCENTE
+SELECT nome, preco
+FROM produto
+ORDER BY preco ASC;
+
+SELECT nome, preco
+FROM produto
+ORDER BY preco DESC;
+
+SELECT cidade, nome
+FROM cliente
+ORDER BY cidade ASC, nome DESC;
+
+-- EX12: LIMIT- LIMITANDO A QUANTIDADE DE LINHA
+SELECT nome, preco
+FROM produto
+ORDER BY preco DESC
+LIMIT 8;
+
+SELECT nome, preco
+FROM produto
+ORDER BY nome
+LIMIT 5 OFFSET 5;
+
+-- EX13: CALCULO DE COLUNAS
+SELECT nome, preco, preco * 1.10 AS preco_atualizado
+FROM produto;
+
+SELECT id_item, quantidade, preco_unitario, quantidade * preco_unitario AS Total_Comprar
+FROM item_pedido;
+
+-- EX14: FUNÇÕES PARA CONSULTAR TEXTOS
+SELECT UPPER(nome) AS Nome_Cliente, Lower(email) AS Email
+FROM cliente;
+
+SELECT CONCAT(nome, ' - ', cidade) AS Cliente_Cidade
+FROM cliente;
+
+-- NUMEROS
+SELECT nome, preco, ROUND(preco * 0.90, 2) AS Preco_Desconto
+FROM produto;
+
+-- DATAS
+SELECT id_pedido, data_pedido, DATE(data_pedido) AS DATAS, DAY (data_pedido) AS DIA, MONTH(data_pedido) AS MÊS, YEAR(data_pedido) AS ANO  
+FROM pedido;
+
+-- SUBSTITUINDO O NULL NO RESULTADO
+SELECT nome, COALESCE(telefone, 'Não Informado') AS Contato
+FROM cliente;
