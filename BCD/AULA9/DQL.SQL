@@ -231,3 +231,29 @@ ORDER BY colunas
 LIMIT quantidade;
 -- DICA: PARA SEGUIR EM ORDEM L´´OGICA PARA UMA CONSULTA PARCIAL OU COMPLETA
 -- -----------------------------------------
+-- MENSAGEM DE SUCESSO
+ SELECT 'BANCO DE DADOS SMARTCOFFEE CRIADO COM SUCESSO!' AS mensagem;
+-- TRANSAÇÕES -- SEGURANÇA E INTEGRIDADE DOS DADOS
+START TRANSACTION;
+UPDATE produto
+SET preco = preco * 1.50
+WHERE id_categoria = 1;
+ 
+SELECT id_produto, nome, preco
+FROM produto
+WHERE id_categoria = 1;
+
+-- DESFAZER AÇÕES
+ROLLBACK;
+
+-- REALIZAR OU CONFIRMAR A AÇÃO
+COMMIT
+
+-- EX2:
+START TRANSACTION
+UPDATE cliente
+SET cidade = 'Limera'
+WHERE id_cliente = 3;
+COMMIT;
+ROLLBACK;
+ 
