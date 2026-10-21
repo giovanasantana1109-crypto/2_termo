@@ -98,46 +98,77 @@ HAVING COUNT(*) >= 2;
 
 SELECT * FROM  pedido
 
--- 16. Crie uma categoria temporária chamada 'Excluir Depois' e remova-a.
+-- PARTE D - RELACIONAMENTOS
+
+-- 16. Liste cada pedido exibindo id, data, nome do cliente, status e valor total.
+SELECT C.NOME, P.STATUS, P.DATA_PEDIDO, P.VALOR_TOTAL
+FROM CLIENTE AS C 
+LEFT JOIN PEDIDO AS P 
+ON P.ID_CLIENTE = C.ID_CLIENTE
+ORDER BY C.NOME;
+
+-- 17. Liste cada produto acompanhado do nome de sua categoria.
+SELECT CA.NOME AS CATEGORIA, COUNT(PR.ID_PRODUTO) AS QTDE_PRODUTOS
+FROM CATEGORIA AS CA
+LEFT JOIN PRODUTO AS PR 
+ON PR.ID_CATEGORIA = CA.ID_CATEGORIA
+GROUP BY CA.ID_CATEGORIA, CA.NOME
+ORDER BY QTDE_PRODUTOS DESC;
+
+-- 18. Gere um relatório dos itens vendidos: pedido, produto, quantidade,
+--     preço unitário e subtotal.
+-- SELECT P.ID_PEDIDO, DATE_FORMAT 
+-- C.PRODUTO AS PEDIDO,PR.NOME AS PRODUTO, IP.QUANTIDADE, IP.PRECO_UNITARIO
+-- FROM PEDIDO AS P
+-- INNER JOIN CLIENTE AS C
+-- ON C.ID_CLIENTE = P.ID_CLIENTE
+-- INNER JOIN ITEM_PEDIDO AS IP
+-- ON IP.ID_PEDIDO = P.ID_PEDIDO
+-- INNER JOIN PRODUTO AS PR
+-- ON PR.ID_PRODUTO = IP.ID_PRODUTO
+-- ORDER BY P.ID_PEDIDO, PR.NOME;
+SELECT P.ID_PEDIDO AS PEDIDO,PR.NOME AS PRODUTO, IP.QUANTIDADE, IP.PRECO_UNITARIO,(IP.QUANTIDADE * IP.PRECO_UNITARIO) AS SUBTOTAL 
+FROM PEDIDO AS P 
+INNER JOIN ITEM_PEDIDO AS IP 
+ON IP.ID_PEDIDO = P.ID_PEDIDO 
+INNER JOIN PRODUTO AS PR 
+ON PR.ID_PRODUTO = IP.ID_PRODUTO 
+ORDER BY P.ID_PEDIDO, PR.NOME;
+
+-- 19. Mostre todos os clientes, inclusive aqueles que nunca fizeram pedidos.
+SELECT C.NOME, P.ID_PEDIDO, P.DATA_PEDIDO
+FROM CLIENTE AS C 
+LEFT JOIN PEDIDO AS P 
+ON P.ID_CLIENTE = C.ID_CLIENTE
+ORDER BY C.NOME;
+
+-- 20. Liste apenas os clientes que nunca fizeram pedidos.
+SELECT C.ID_CLIENTE, C.NOME 
+FROM CLIENTE AS C  
+LEFT JOIN PEDIDO AS P  
+ON P.ID_CLIENTE = C.ID_CLIENTE
+WHERE P.ID_PEDIDO IS NULL;
+
+-- PARTE E - DESAFIO GERENCIAL
+
+-- 21. Informe quantos pedidos FINALIZADOS cada cliente realizou e quanto
+--     cada cliente gastou. Ordene do maior gasto para o menor.
 
 
--- PARTE D - INTEGRIDADE E ERROS CONTROLADOS
--- Execute uma tentativa por vez. Depois deixe o comando problemático comentado.
-
--- 17. Tente inserir um produto com id_categoria = 9999.
--- Qual restrição impediu a operação?
+-- 22. Mostre a quantidade de produtos e o preço médio de cada categoria.
 
 
--- 18. Tente cadastrar um cliente usando 'ana@email.com'.
--- Qual restrição impediu a operação?
+-- 23. Descubra quais produtos possuem preço superior ao preço médio geral.
 
 
--- 19. Tente criar um pedido com id_cliente = 9999.
--- Qual restrição impediu a operação?
+-- 24. Classifique os produtos como Econômico, Intermediário ou Premium.
+--     Defina e informe suas faixas de preço.
 
 
--- 20. Escreva em comentários a diferença entre os três erros anteriores.
+-- 25. CONSULTA AUTORAL
+-- Pergunta de negócio:
+--
+-- Por que essa informação é útil?
+--
+-- Consulta:
 
-
--- PARTE E - DESAFIO COMPLETO COM TRANSAÇÃO
-
--- 21. Inicie uma transação.
-
-
--- 22. Dentro dela, cadastre um cliente, um pedido e dois itens relacionados.
-
-
--- 23. Faça uma consulta com JOIN comprovando que os registros existem
---     enquanto a transação está aberta.
-
-
--- 24. Execute ROLLBACK e depois use SELECT para provar que o cadastro foi desfeito.
-
-
--- 25. Repita o processo com novos dados e finalize usando COMMIT.
---     Depois consulte os registros persistidos.
-
-
--- DESAFIO EXTRA
--- 26. Escolha uma situação realista do SmartCoffee que exija INSERT + UPDATE
---     ou UPDATE + DELETE lógico. Descreva a regra de negócio e implemente.
