@@ -1,0 +1,45 @@
+h1_y {
+    float: left;    
+    padding-bottom: 10px;
+}
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    text-decoration: none;
+}
+.cabecalho {
+    background-color: rgb(89, 199, 226);
+}
+.cabecalho2 {
+    background-color: #6dc9e0;
+}
+.tv {
+    align-items: flex-end;
+}
+button {
+    background-color: rgb(89, 199, 226);
+}
+img{
+    width: 250px; ;
+    height: 150px; ;
+}
+
+.card {
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 34px -14px rgba(0, 0, 0, 0.4);
+}
+.moldura { overflow: hidden; }
+.moldura img { transition: transform 0.4s; }
+.card:hover .moldura img {
+  transform: scale(1.12);
+}
+body {
+    background-color: rgb(186, 229, 220);
+    color: rgb(35, 13, 129);
+}
