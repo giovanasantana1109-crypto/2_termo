@@ -4,7 +4,7 @@ CREATE DATABASE BIBLIOTECA_CONECTADA_GI;
 
 USE BIBLIOTECA_CONECTADA_GI;
 
-select * from emprestimo;
+select * from livro;
 
 CREATE TABLE USUARIO (
     id_usuario int primary key auto_increment,
@@ -72,3 +72,37 @@ INSERT INTO emprestimo(id_usuario,id_livro,data_emprestimo,data_prevista,data_de
 DELETE FROM emprestimo;
 
 SELECT* from emprestimo;
+
+-- 9. UPDATE
+select * from usuario;
+
+UPDATE usuario
+SET telefone = ' 1323232323'
+WHERE id_usuario = 3;
+
+
+--10 - Atualização em lote —
+-- ex3 : ATUALIAZADO COM CONDICIONAIS
+UPDATE livro
+SET quantidade_disponivel =quantidade_disponivel + 2
+WHERE ano_publicacao > 2020;
+
+-- 11. DELETE e integridade
+-- usuario sem emprestimo
+INSERT INTO usuario(nome,email,telefone,ativo) VALUES
+('Henrique','henrique.oliveira@gmail','(19) 8794324-9853', TRUE);
+
+DELETE FROM usuario
+WHERE id_usuario = 5 ;
+
+-- usuario com emprestimo
+DELETE FROM usuario
+WHERE id_usuario = 3 ;
+-- Não deu certo, porqeu o id_usuario 3 esta dentro do emprentimo tambem
+
+-- FASE 3 — DQL: CONSULTAS E ANÁLISE
+-- 12. SELECT básico
+SELECT titulo,autor,quantidade_disponivel
+FROM livro;
+
+-- 13. WHERE + ORDER BY
