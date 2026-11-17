@@ -5,7 +5,9 @@ create database if not exists recuperativa_retrogame_gi_santana;
 
 use recuperativa_retrogame_gi_santana;
 
-SELECT * FROM plataforma;
+SELECT * FROM jogo;
+
+
 -------------------------------------
 
 CREATE TABLE cliente (
@@ -69,6 +71,21 @@ INSERT INTO plataforma (NOME) VALUES
 ('Xbox');
 
 INSERT INTO categoria (DESCRICAO) VALUES
+('Casual'),
+('Estratégia');
 
-INSERT INTO jogos (TITULO, CODIGO, ANO_LANCAMENTO, QUANTIDADE_DISPONIVEL) VALUES
-()
+INSERT INTO jogo (TITULO, CODIGO, ANO_LANCAMENTO, QUANTIDADE_DISPONIVEL) VALUES
+('Pou',12,2019,9),
+('Robbery Bob',14,2012,100),
+('Zombie Tsunami',16,2012,24),
+('Clash Royale',18,2016,4);
+
+select * from cliente;
+
+UPDATE cliente
+SET TELEFONE = '67676767'
+WHERE id_cliente = 4;
+
+select * from jogo;
+
+
