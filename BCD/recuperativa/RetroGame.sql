@@ -5,7 +5,7 @@ create database if not exists recuperativa_retrogame_gi_santana;
 
 use recuperativa_retrogame_gi_santana;
 
-SELECT * FROM jogo;
+SELECT * FROM locacao;
 
 
 -------------------------------------
@@ -86,6 +86,15 @@ UPDATE cliente
 SET TELEFONE = '67676767'
 WHERE id_cliente = 4;
 
-select * from jogo;
+--fase 3 - DQL
+select titulo,ano_lancamento, quantidade_disponivel from jogo;
+
+SELECT TITULO FROM jogo
+WHERE QUANTIDADE_DISPONIVEL > 2
+ORDER BY QUANTIDADE_DISPONIVEL DESC;
+
+SELECT TITULO,ano_lancamento FROM jogo
+WHERE ano_lancamento BETWEEN 1990 AND 2005;
 
 
+--fese 4 - TCL
