@@ -1,0 +1,84 @@
+h1{
+    background-color: aquamarine;
+    height: 60px;
+    text-align: center;
+    border-radius: 20px;
+    text-decoration: underline wavy #EC4899;
+    color: rgb(128, 92, 212);
+}
+h2{
+    color: purple;
+  font-size: 18px;
+}
+body{
+    background-color: rgba(187, 146, 226, 0.726);
+}
+.res-bas{
+    display: block; 
+    max-width: 80%;
+    height: auto;
+    width: 80%;
+    
+}
+.img-rec img{
+    width: 400px;
+    height: 250px;
+    width: 60%;
+    aspect-ratio: 6 / 3;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 100px;
+}
+.img-card img{
+    /* primeiro modelo */
+    /* width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover; */
+
+    /* segundo modelo */
+    width: 80%;
+    aspect-ratio: 2;
+    object-fit: cover;
+    border-radius: 500%;
+}
+.pers-img img{
+    border-radius: 18px;
+    box-shadow: 0 18px 40px rgb(142, 48, 170);
+
+    transition: transform .25s ease, filter .25 ease;
+}
+.pers-img:hover{
+    transform: scale(1.03);
+    filter: saturate(1.08) contrast(1.03);
+    filter: grayscale(1);
+    filter: sepia(.7);
+    /* filter: brightness(.85);
+    filter: contrast(1.15); */
+    filter: saturate(2.2);
+    /* filter: blur(4px);  */
+}
+.img-grid img{
+    width: 650px;
+    height: 300px;
+}
+.sec-grid{
+    display: grid;
+    grid-template-columns:repeat(auto-fit, minmax(500px,1fr)) ;
+    gap: 0px;
+}
+.img-grid img{
+    width: 70%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 122px;
+}
+.video-bd{
+    /* display: block;
+    width: 70%;
+    height: auto;
+    border-radius: 160px; */
+
+    width: 50%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
