@@ -64,3 +64,74 @@ img{
     float: left;
     margin: 0 12px 8px 0;
 }
+.foto {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+}
+.foto figcaption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 14px;
+  color: var(--roxo1);
+  background: #c78ad8;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+.foto:hover figcaption {
+  transform: translateY(0);
+}
+.titulo {
+    color: var(--roxo1);
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: underline wavy #EC4899;
+}
+ul {
+  font-size: 16px;
+}
+mark{
+    color: var(--roxo3);
+}
+/* parte 3 */
+button{
+    color: #390447;
+    border-radius: 12px;
+    
+}
+.botao {
+  background: #a742c4;
+  color: #f7f4f8;
+  padding: 13px 26px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.botao:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 22px -8px rgba(162, 14, 231, 0.664);
+}
+.botao:active {
+  transform: translateY(-2px) scale(0.97);
+}
+
+
+
+
+.pergunta {
+  border: 1.5px solid #E2E8F0;
+  border-radius: 18px;
+  padding: 14px 16px;
+}
+.pergunta[open] {
+  border-color: #4F46E5;
+}
+summary::after {
+  content: "▾";
+  float: right;
+  transition: transform 0.25s;
+}
+.pergunta[open] summary::after {
+  transform: rotate(180deg);
+}
