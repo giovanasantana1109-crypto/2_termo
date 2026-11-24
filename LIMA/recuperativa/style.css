@@ -117,15 +117,26 @@ button{
 }
 
 
-
+.per{
+    font-family: "Comic Sans MS", cursive;
+    font-size: 18px;
+    font-weight: 300;
+    text-decoration: underline;
+    /* background-color: #b260d8; */
+    margin-left: auto;
+    margin-right: 40px;
+    text-align: right;
+}
 
 .pergunta {
-  border: 1.5px solid #E2E8F0;
+  border: 1.5px solid #9a29ce;
   border-radius: 18px;
   padding: 14px 16px;
+  
+ 
 }
 .pergunta[open] {
-  border-color: #4F46E5;
+  border-color: #b260d8;
 }
 summary::after {
   content: "▾";
@@ -134,4 +145,27 @@ summary::after {
 }
 .pergunta[open] summary::after {
   transform: rotate(180deg);
+}
+
+
+details {
+  max-width: 600px; /* Define o tamanho máximo da caixa (pode mudar para 500px ou 700px) */
+  margin-bottom: 10px; /* Espaço entre uma caixa e outra */
+  padding: 10px 15px; /* Deixa a altura da caixa mais compacta */
+  border: 1px solid #4a148c; /* Cor da borda combinando com seu botão */
+  border-radius: 12px;
+  width: 350px; 
+  margin-left: auto; 
+  margin-right: 40px;
+  
+}
+
+summary {
+  font-size: 16px; /* Ajusta o tamanho da letra da pergunta */
+  cursor: pointer;
+  
+}
+.pergunta p {
+    background-color: #bc90da;
+    border-width: 100px;
 }
