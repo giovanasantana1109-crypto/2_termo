@@ -173,14 +173,12 @@ summary {
 /* parte 4 */
 
 .estrelas {
-  /* display: inline-flex; */
   display: flex;
   width: 35px; 
   margin-left: auto; 
   margin-right: 40px;
-  /* flex-direction: row-reverse; */
-  flex-direction: column-reverse;
-  flex-direction: row;
+  flex-direction: row-reverse;
+  
 }
 .estrelas input { position: absolute; opacity: 0; }
 .estrelas label {
@@ -194,8 +192,112 @@ summary {
 label:hover, label:hover ~ label,
 input:checked ~ label {
   color: #F59E0B;
+  background-color: #58076e;
 }
 
 .notas h3{
-  color: #440853;
+  color: #a637c2;
+  text-align: right;
+}
+
+
+
+/* card*/
+.card-destaque {
+  background-color: #e5e0c2; 
+  border: 2px solid #8E24AA; 
+  border-radius: 20px;
+  padding: 60px;
+  max-width: 450px; 
+  text-align: center; 
+  margin: 10px 0; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); 
+  
+}
+
+.card-destaque h3 {
+  color: #3B0A45; 
+  font-family: Georgia, serif; 
+  font-size: 29px;
+  margin-top: 0;
+  margin-bottom: 17px;
+}
+
+.card-destaque p {
+  color: #222222;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.botao-card {
+  display: inline-block;
+  background-color: #8E24AA; 
+  color: #FFFFFF; 
+  text-decoration: none; /* Tira o sublinhado do link */
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 25px; 
+  transition: background-color 0.3s;
+}
+
+.botao-card:hover {
+  background-color: #6A1B9A; 
+}
+
+/* organizacao do meio */
+.davi{
+  display: grid;
+  grid-template-columns:repeat(2,1fr) ;
+  gap: 20px;
+}
+
+.perguntas{
+  width: 350px;
+  margin-left: auto; 
+}
+
+.concurso {
+  min-width: auto;
+  margin-left: 10px;
+  margin-right: 0;
+}
+.per-a{
+  margin-right: 950px;
+}
+per-b{
+  min-width: auto;
+  margin-left: 10px;
+  margin-right: 0;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* parte 5 */
+.rodape{
+  background-color: #ce78ce;
+}
+footer{
+  background-color: #ecc545;
+}
+.pink{
+  background-color: #ce78ce;
 }
