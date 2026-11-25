@@ -169,3 +169,33 @@ summary {
     background-color: #bc90da;
     border-width: 100px;
 }
+
+/* parte 4 */
+
+.estrelas {
+  /* display: inline-flex; */
+  display: flex;
+  width: 35px; 
+  margin-left: auto; 
+  margin-right: 40px;
+  /* flex-direction: row-reverse; */
+  flex-direction: column-reverse;
+  flex-direction: row;
+}
+.estrelas input { position: absolute; opacity: 0; }
+.estrelas label {
+  font-size: 34px;
+  color: #CBD5E1;
+  cursor: pointer;
+  transition: 0.15s;
+  
+}
+/* pinta a estrela E as anteriores */
+label:hover, label:hover ~ label,
+input:checked ~ label {
+  color: #F59E0B;
+}
+
+.notas h3{
+  color: #440853;
+}
